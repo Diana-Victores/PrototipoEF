@@ -38,6 +38,7 @@ public class MDIComercial extends javax.swing.JFrame {
     private Mantenimiento_Vendedor Mantenimiento_Vendedor;
     private Proceso_Existencia Proceso_Existencia;
     private Mantenimiento_TransporteRuta Mantenimiento_TransporteRuta;
+     private MovimientoInventario MovimientoInventario;
     private Proceso_Cartera_Venta Proceso_Cartera_Venta;
     private Proceso_Cotizacion_venta Proceso_Cotizacion_venta;
     private Proceso_Pedido_venta Proceso_Pedido_venta;
@@ -127,6 +128,7 @@ public class MDIComercial extends javax.swing.JFrame {
         P_producto = new javax.swing.JMenu();
         ProcesoExistencia = new javax.swing.JCheckBoxMenuItem();
         Item_Tipo_Documento = new javax.swing.JCheckBoxMenuItem();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         P_ventas = new javax.swing.JMenu();
         P_pedido_factura = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -357,6 +359,15 @@ public class MDIComercial extends javax.swing.JFrame {
             }
         });
         P_producto.add(Item_Tipo_Documento);
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("Movimiento Inventario");
+        jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem1ActionPerformed(evt);
+            }
+        });
+        P_producto.add(jCheckBoxMenuItem1);
 
         jMenu4.add(P_producto);
 
@@ -888,6 +899,23 @@ ProcesoDevolucionCompra = new ProcesoDevolucionCompra();
         Proceso_AutorizacionOrdenCompra1.setVisible(true);
     }//GEN-LAST:event_autoActionPerformed
 
+    private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
+        // TODO add your handling code here:
+         MovimientoInventario = new MovimientoInventario();
+
+        jdpescritorio.add(MovimientoInventario);
+        Dimension desktopSize = jdpescritorio.getSize();
+        Dimension FrameSize = MovimientoInventario.getSize();
+        MovimientoInventario.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        MovimientoInventario.show();
+        logo.setVisible(true);
+        MovimientoInventario.setVisible(true);
+        
+        
+        
+        
+    }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -940,6 +968,7 @@ ProcesoDevolucionCompra = new ProcesoDevolucionCompra();
     public static javax.swing.JMenu cerrar_sesion;
     private javax.swing.JMenuItem devolucion;
     private javax.swing.JMenuItem emi;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
