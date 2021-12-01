@@ -40,41 +40,41 @@ public class MovimientoInventarioDAO {
 
     private static final String SQL_DELETE = "DELETE FROM tbl_movimiento_inventario WHERE Pk_movimiento_inventario=?";
 
-    public List<MovimientoInventario> select() {
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        MovimientoInventario movimiento = null;
-        List<MovimientoInventario> movimientos = new ArrayList<MovimientoInventario>();
-
-        try {
-            conn = Conexion.getConnection();
-            stmt = conn.prepareStatement(SQL_SELECT);
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-
-                String codigoMovimiento = rs.getString("Pk_movimiento_inventario");
-                String nombreBodega = rs.getString("nombre_bodega");
-                String codigounidad = rs.getString("codigo_unidad");
-                String cantidadexistencia = rs.getString("cantidad_existencia");
-
-//                movimiento = new MovimientoInventario();
-//                movimiento.setPk_movimiento_inventario(codigoMovimiento);
-//                movimiento.setnombre_bodega(nombreBodega);
-//                movimiento.setEstatus_Marca(estatusMarca);
-//                movimiento.add(marca);
-            }
-
-        } catch (SQLException ex) {
-            ex.printStackTrace(System.out);
-        } finally {
-            Conexion.close(rs);
-            Conexion.close(stmt);
-            Conexion.close(conn);
-        }
-
-//        return marcas;
-    }
+//    public List<MovimientoInventario> select() {
+//        Connection conn = null;
+//        PreparedStatement stmt = null;
+//        ResultSet rs = null;
+//        MovimientoInventario movimiento = null;
+//        List<MovimientoInventario> movimientos = new ArrayList<MovimientoInventario>();
+//
+//        try {
+//            conn = Conexion.getConnection();
+//            stmt = conn.prepareStatement(SQL_SELECT);
+//            rs = stmt.executeQuery();
+//            while (rs.next()) {
+//
+//                String codigoMovimiento = rs.getString("Pk_movimiento_inventario");
+//                String nombreBodega = rs.getString("nombre_bodega");
+//                String codigounidad = rs.getString("codigo_unidad");
+//                String cantidadexistencia = rs.getString("cantidad_existencia");
+//
+////                movimiento = new MovimientoInventario();
+////                movimiento.setPk_movimiento_inventario(codigoMovimiento);
+////                movimiento.setnombre_bodega(nombreBodega);
+////                movimiento.setEstatus_Marca(estatusMarca);
+////                movimiento.add(marca);
+//            }
+//
+//        } catch (SQLException ex) {
+//            ex.printStackTrace(System.out);
+//        } finally {
+//            Conexion.close(rs);
+//            Conexion.close(stmt);
+//            Conexion.close(conn);
+//        }
+//
+////        return marcas;
+//    }
 
     public int insert(Tipo_Documento documento) {
         Connection conn = null;
